@@ -1,0 +1,44 @@
+<!-- Меню -->
+  <div class="p-0">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-dark bg-dark">
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="<%= root_path %>"> Главная </a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Все районы
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <li><a class="dropdown-item" href="/districts/1/reviews/new"> Московский </a></li>
+              <li><a class="dropdown-item" href="/districts/2/reviews/new"> Василеостровский </a></li>
+              <li><a class="dropdown-item" href="/districts/3/reviews/new"> Петроградский </a></li>
+              <li><a class="dropdown-item" href="/districts/4/reviews/new"> Приморский </a></li>
+              <li><a class="dropdown-item" href="/districts/5/reviews/new"> Фрунзенский </a></li>
+              <li><a class="dropdown-item" href="/districts/6/reviews/new"> Красносельский </a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <ul class="navbar-nav">
+          <% if registered_in_user? %>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="<%= edit_users_path %>"> <%= current_user.email_or_name %> </a>
+            </li>
+            <li><hr class="dropdown-divider"></li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="<%= session_path %> " data-method = "delete">  Выйти </a>
+            </li>
+          <% else %>
+             <li class="nav-item">
+               <a class="nav-link active" aria-current="page" href="<%= new_users_path %>"> Регистрация </a>
+             </li>
+             <li><hr class="dropdown-divider text-white"></li>
+             <li class = "nav-item">
+               <a class="nav-link active" aria-current="page" href="<%= new_session_path %>"> Войти </a>
+             </li>
+          <% end %>
+      </ul>
+    </nav>
+  </div>

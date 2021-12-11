@@ -1,0 +1,21 @@
+
+<%= render partial: 'shared/site_header', locals: {name_site_header: 'Авторизация'} %>
+<div class="form-color container">
+  <h5 class = "pt-4 pb-4 text-dark"> Введите данные </h5>
+  <%# <%= render 'shared/errors', object: @session %> %>
+  <div class = "form-color">
+    <%= form_with  url: '/session', method: :post do |form| %>
+      <div class="mb-3 mt-3">
+        <%= form.email_field :email, placeholder: 'E-mail', value: params[:email], class: 'form-control'%>
+      </div>
+      <div class="mb-3 mt-3">
+        <%= form.password_field :password, placeholder: 'Пароль', class: 'form-control'%>
+      </div>
+      <div class="mb-3 mt-3">
+        <%= form.check_box :remember_me, class: 'form-check-input', value: 1%>
+        <%= form.label :remember_me, 'Запомнить', class: "form-check-label" %>
+      </div>
+      <%= form.button 'Отправить', class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

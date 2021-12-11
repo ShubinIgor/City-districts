@@ -1,0 +1,34 @@
+
+  <!-- Шапка с название вкладки-->
+  <%= render partial: 'shared/site_header', locals: {name_site_header: 'Выберите район'} %>
+
+
+  <!-- Блок со всеми районами -->
+  <div class = "bg-container pt-5 pb-2 font-weight-light container">
+      <%= render partial: 'shared/flash' %>
+      <!--Первые 3 блока (района) -->
+        <!--rounded - закругленние углов блока -->
+    <div class="row ">
+      <div class="col-sm m-2 py-5 text-center text-white bg-line rounded">
+        <a href="/districts/1/reviews/new" class="text-decoration-none"><h3> Московский </h3></a>
+      </div>
+      <div class="col-sm m-2 py-5 text-center text-white bg-line rounded">
+        <a href="/districts/2/reviews/new" class="text-decoration-none"><h3> Василеостровский </h3></a>
+      </div>
+      <div class="col-sm m-2 py-5 text-center text-white bg-line rounded">
+        <a href="/districts/3/reviews/new" class="text-decoration-none"><h3> Петроградский </h3></a>
+      </div>
+    </div>
+    <!--Вторые 3 блока (района) -->
+    <div class="row ">
+      <div class="col-sm m-2 py-5 text-center text-white bg-line rounded">
+        <a href="/districts/4/reviews/new" class="text-decoration-none"><h3> Приморский </h3></a>
+      </div>
+      <div class="col-sm m-2 py-5 text-center text-white bg-line rounded">
+        <a href="/districts/5/reviews/new" class="text-decoration-none"><h3> Фрунзенский </h3></a>
+      </div>
+      <div class="col-sm m-2 py-5 text-center text-white bg-line rounded">
+        <a href="/districts/6/reviews/new" class="text-decoration-none"><h3> Красносельский </h3></a>
+      </div>
+    </div>
+  </div>

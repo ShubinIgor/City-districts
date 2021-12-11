@@ -1,0 +1,7 @@
+<% if flash.present? %>
+  <div class = "pb-3">
+    <% flash.each do |k, v| %>
+      <%= tag.div v, class: "alert alert-#{k}" %>
+    <% end %>
+  </div>
+<% end %>

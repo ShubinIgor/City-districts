@@ -1,0 +1,15 @@
+
+
+<%= render 'shared/errors', object: @review %>  <!-- Ошибки валидации -->
+
+<div class="">
+  <%= form_with model: [@district, @review] do |form| %>
+    <div class="mb-3 mt-3">
+      <%= form.text_field :name, placeholder: 'Имя', class: 'form-control'%>
+    </div>
+    <div class="mb-3">
+      <%= form.text_area :body, placeholder: 'Комментарий', class: 'form-control' %>
+    </div>
+    <%= form.button 'Отправить', class: "btn btn-primary" %>
+  <% end %>
+</div>

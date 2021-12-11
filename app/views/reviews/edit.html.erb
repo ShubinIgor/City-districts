@@ -1,0 +1,10 @@
+
+  <!-- Шапка с название вкладки-->
+  <%= render partial: 'shared/site_header', locals: {name_site_header: @district} %>
+
+
+  <!--Форма для редактирования ответа -->
+  <div class="container bg-container pt-5 pb-2  font-weight-light">
+    <h5 class="pt-0 pb-4"> Изменить комментарий</h5>
+    <%= render partial: 'form' %>
+  </div>

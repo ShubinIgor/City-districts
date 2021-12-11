@@ -1,0 +1,18 @@
+
+<div class = "form-color">
+  <%= form_with  url: "/users", method: :patch do |form| %>
+    <div class="mb-3 mt-3">
+      <%= form.text_field :name, placeholder: 'Имя', class: 'form-control'%>
+    </div>
+    <div class="mb-3 mt-3">
+      <%= form.email_field :email, placeholder: 'E-mail', class: 'form-control'%>
+    </div>
+    <div class="mb-3 mt-3">
+      <%= form.password_field :password, placeholder: 'Пароль', class: 'form-control'%>
+    </div>
+    <div class="mb-3 mt-3">
+      <%= form.password_field :password_confirmation, placeholder: 'Повторите пароль', class: 'form-control'%>
+    </div>
+    <%= form.button 'Отправить', class: "btn btn-primary" %>
+  <% end %>
+</div>

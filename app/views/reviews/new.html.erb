@@ -1,0 +1,45 @@
+<!-- Передача названия района в yield Лэйаута -->
+<% provide(:title, @district.title) %>
+
+  <!-- Шапка с название вкладки-->
+  <%= render partial: 'shared/site_header', locals: {name_site_header: @district} %>
+
+
+  <!-- Все комментарии -->
+  <div class="container pb-1 pt-4 bg-container">
+    <!-- Выводит сообщение на действие пользователя. Создание, изменение, удаление комментария -->
+    <%= render partial: 'shared/flash' %>
+    <div class = 'mb-5'>
+      <%= paginate @reviews %>
+    </div>
+    <!-- Отображение всех комментариев -->
+    <% @reviews.each do |review| %>
+      <div class="mb-3 mt-3" id = <%= dom_id(review) %> >
+        <div class="h5">
+          <%= review.name %>
+          <data datatime = "<%= review.datatime_created %>"> <!--Метод описан в model Review -->
+            <small class = "text-muted font-size">
+              , <%= review.datatime_created %>
+            </small>
+          </data>
+        </div>
+        <div class = "mb-4"> <%= sanitize review.body %> </div>
+        <div class="btn-group">
+          <%= link_to 'Изменить', edit_district_review_path(@district, review), class: "btn btn-info" %>
+          <%= link_to 'Удалить', district_review_path(@district, review),
+           data: {method: :delete, confirm: 'Удалить?'}, class: "btn btn-danger" %>
+        </div>
+        <hr></hr>
+      </div>
+    <% end %>
+    <div class = 'mb-3 mt-5'>
+      <%= paginate @reviews %>
+    </div>
+  </div>
+
+
+  <!--Форма для создания нового ответа -->
+  <div class="bg-line pb-2 font-weight-light container">
+    <h5 class = "pt-4 pb-4 text-light" id = "form"> Оставить комментарий</h5>
+    <%= render partial: 'form' %>
+  </div>

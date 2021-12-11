@@ -1,0 +1,25 @@
+.bg-container {
+  background-color: #dbdbdb
+}
+.bg-line {
+  background-color: #4d4d4d
+}
+
+.font-size {
+  font-size: 12px;
+}
+
+.font-family {
+  font-family: serif;
+}
+
+.test {
+  color: red;
+  border-style: solid;
+  border-color: red;
+  border-width: 5px;
+}
+
+.form-color {
+  background-color: #E8E8E8;
+}
