@@ -10,5 +10,5 @@ Rails.application.routes.draw do
   end
 
   resources :tests, only: %i[edit update]
-  root 'reviews#welcome'
+  root 'districts#index'
 end

@@ -4,8 +4,6 @@ class ReviewsController < ApplicationController
   before_action :specific_district, except: :welcome
   before_action :specific_review, only: %i[destroy edit update]
 
-  def welcome; end
-
   # Создает params на основе моделей указанных в методе. Данные берутся из инпутов формы
   def new
     @review = @district.reviews.build
